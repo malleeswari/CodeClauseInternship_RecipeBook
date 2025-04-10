@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="left">
+        <strong><span>🍲 My Recipes</span></strong>
+      </div>
+      <div class="center">
+        <input id="search" placeholder="Search recipes..." />
+        <select id="categoryFilter" class="category-filter">
+          <option value="all">All</option>
+          <option value="breakfast">Breakfast</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+        </select>
+      </div>
+      <div class="right">
+        <button onclick="toggleForm('loginForm')">Login</button>
+        <button onclick="toggleForm('signupForm')">Signup</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="auth-form" id="loginForm">
+    <h3>Login</h3>
+    <input type="email" id="loginEmail" placeholder="Email" />
+    <input type="password" id="loginPassword" placeholder="Password" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="auth-form" id="signupForm">
+    <h3>Signup</h3>
+    <input type="email" id="signupEmail" placeholder="Email" />
+    <input type="password" id="signupPassword" placeholder="Password" />
+    <button onclick="signup()">Signup</button>
+  </div>
+
+  <div class="recipe-form" id="formSection">
+    <input id="title" placeholder="Recipe Title" />
+    <input id="ingredients" placeholder="Ingredients (comma separated)" />
+    <textarea id="steps" placeholder="Preparation Steps"></textarea>
+    <input id="image" placeholder="Image URL (optional)" />
+    <select id="category">
+      <option value="breakfast">Breakfast</option>
+      <option value="lunch">Lunch</option>
+      <option value="dinner">Dinner</option>
+    </select>
+    <button onclick="addRecipe()">Add Recipe</button>
+  </div>
+
+  <div class="recipe-list" id="recipes"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
